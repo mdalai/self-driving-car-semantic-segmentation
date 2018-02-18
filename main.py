@@ -129,8 +129,8 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     for epoch in range(epochs):
         for image, label in get_batches_fn(batch_size):
             _, loss = sess.run([train_op, cross_entropy_loss], 
-                feed_dict = { input_image: image, labels: label, keep_prob: 0.5, learning_rate: 0.0009 })
-            print("Loss: = {:.3f".format(loss))
+                feed_dict = { input_image: image, correct_label: label, keep_prob: 0.5, learning_rate: 0.0009 })
+            print("Loss: = {:.3f}".format(loss))
         print()
     
 tests.test_train_nn(train_nn)
@@ -166,10 +166,11 @@ def run():
         image_input, keep_prob, layer3_out, layer4_out, layer7_out = load_vgg(sess, vgg_path)
         nn_last_layer = layers(layer3_out, layer4_out, layer7_out, num_classes)
         logits, train_op, cross_entropy_loss = optimize(nn_last_layer, labels, learning_rate, num_classes)
-
+        
+        sess.run(tf.global_variables_initializer())
 
         # TODO: Train NN using the train_nn function
-        train_nn(sess, epochs=50, batch_size=5, get_batches_fn, train_op, cross_entropy_loss, image_input, labels, keep_prob, learning_rate)
+        train_nn(sess, 20, 16, get_batches_fn, train_op, cross_entropy_loss, image_input, labels, keep_prob, learning_rate)
 
         # TODO: Save inference data using helper.save_inference_samples
         #  helper.save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_prob, input_image)
