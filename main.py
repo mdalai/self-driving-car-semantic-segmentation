@@ -4,6 +4,7 @@ import helper
 import warnings
 from distutils.version import LooseVersion
 import project_tests as tests
+import csv
 
 
 # HYPER PARAMETERS
@@ -20,6 +21,9 @@ IMAGE_SHAPE = (160, 576)
 DATA_DIR = './data'
 RUNS_DIR = './runs'
 #MODEL_SAVE_FILE = './model/FCN_train_model.ckpt'
+
+# save loss in csv file
+LOSS_FILE = '.loss/loss.csv'
 
 
 # Check TensorFlow Version
@@ -139,6 +143,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     :param keep_prob: TF Placeholder for dropout keep probability
     :param learning_rate: TF Placeholder for learning rate
     """
+    losses =[]
     # TODO: Implement function
     for epoch in range(epochs):
         for image, label in get_batches_fn(batch_size):
@@ -147,9 +152,16 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
                        
         print("EPOCH: {}".format(epoch + 1), " / {}".format(epochs), " Loss: {:.3f}".format(loss) )
 
+        losses.append('{:3f}'.format(loss))
+
     
     # save the model
     #saver.save(sess, MODEL_SAVE_FILE)
+
+    # Save LOSS values to csv file
+    with open(LOSS_FILE, 'wb') as f:
+        wr = csv.writer(f, quoting=csv.QUOTE_ALL)
+        wr.writerow(losses)
     
 tests.test_train_nn(train_nn)
 
