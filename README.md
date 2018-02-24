@@ -106,7 +106,16 @@ You are good to GO.
     
 #### 2. With Initializer & Regularizer
     ```
-    EPOCH: 1  / 10  Loss: 0.517                                                                                                             EPOCH: 2  / 10  Loss: 0.372                                                                                                             EPOCH: 3  / 10  Loss: 0.253                                                                                                             EPOCH: 4  / 10  Loss: 0.324                                                                                                             EPOCH: 5  / 10  Loss: 0.204                                                                                                             EPOCH: 6  / 10  Loss: 0.185                                                                                                             EPOCH: 7  / 10  Loss: 0.189                                                                                                             EPOCH: 8  / 10  Loss: 0.190                                                                                                             EPOCH: 9  / 10  Loss: 0.156                                                                                                             EPOCH: 10  / 10  Loss: 0.105
+    EPOCH: 1  / 10  Loss: 0.517 
+    EPOCH: 2  / 10  Loss: 0.372 
+    EPOCH: 3  / 10  Loss: 0.253 
+    EPOCH: 4  / 10  Loss: 0.324
+    EPOCH: 5  / 10  Loss: 0.204
+    EPOCH: 6  / 10  Loss: 0.185
+    EPOCH: 7  / 10  Loss: 0.189
+    EPOCH: 8  / 10  Loss: 0.190
+    EPOCH: 9  / 10  Loss: 0.156
+    EPOCH: 10  / 10  Loss: 0.105
     ```
 
 #### 3. With only Initializer
