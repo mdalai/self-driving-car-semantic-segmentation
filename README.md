@@ -3,6 +3,7 @@
 [//]: # (Image References)
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
+[FCN_arch]: https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_folder_7/Deconvnet.png
 
 
 ## Project Introduction
@@ -29,7 +30,7 @@ Let's see what training image and label look like:
   - Total training lables:  289.
 
 ## Fully Convolutional Network (FCN)
-![alt text][https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_folder_7/Deconvnet.png]
+![alt text][FCN_arch]
 
 ## Training & Testing
 
