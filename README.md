@@ -3,7 +3,7 @@
 [//]: # (Image References)
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
-[FCN_arch]: https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_folder_7/Deconvnet.png
+[FCN_arch]: ./assets/FNC_architecture.PNG
 
 
 ## Project Introduction
@@ -30,18 +30,19 @@ Let's see what training image and label look like:
   - Total training lables:  289.
 
 ## Fully Convolutional Network (FCN)
-![alt text][FCN_arch]
-
 Typical CNN can classify Hot Dog and NOT Hot Dog from image very well, but it can not answer the question of where is the hot dog in the image. Because it does not preserve spatial information from the image. FCN solves this problem.
 
-Fully Convolutional Networks - FCN
-Encoder: extract features from the image.
-Use state of art VGG/ResNet. These are well-trained models performed great in ImageNet.
-Replace the final fully-connected layer with 1x1 Convolution. 1x1 Convolution makes it possible to preserve spatial information.
+![alt text][FCN_arch]
 
-Decoder: upscale the output from Encoder make it same size as original image.
-Upsample the layers. Transpose convolution help upsampling the previous layer to a higher resolution or dimension. Transpose convolution is also called deconvolution. It is opposite of convolution process.
-Skip layers. Problem of convolution in encoder is that it looks close on some feature and lose bigger picture as a result. The skip layer is here to retain losed information. Simply, it skipes some of the layers in the encoder and decoder layers. 
+Fully Convolutional Networks (FCN) consists of two parts: Encoder and Decoder.
+
+**Encoder**: extract features from the image.
+- Use state of art pre-trained model such as VGG, ResNet. These are well-trained models performed great in ImageNet.
+- Replace the final fully-connected layer with 1x1 Convolution. 1x1 Convolution makes it possible to preserve spatial information.
+
+**Decoder**: upscale the output from Encoder make it same size as original image.
+- Upsample the layers. Transpose convolution help upsampling the previous layer to a higher resolution or dimension. Transpose convolution is also called deconvolution. It is opposite of convolution process.
+- Skip layers. Problem of convolution in encoder is that it looks close on some feature and lose bigger picture as a result. The skip layer is here to retain losed information. Simply, it skipes some of the layers in the encoder and decoder layers. 
 
 
 ## Training & Testing
