@@ -190,6 +190,12 @@ You are good to GO.
 #### FINAL MODEL
 - Hyper-parameters
     ```
+    EPOCHS = 20 
+    BATCH_SIZE = 32
+    KEEP_PROB = 0.5
+    LEARNING_RATE = 0.0009
+    REG_SCALE = 1e-3   # L2 regularizer scale
+    INI_STDDEV = 1e-3  # Initializer stddev
     ```
 - Results
     ![alt text][round31]
