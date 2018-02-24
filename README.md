@@ -36,7 +36,8 @@ Let's see what training image and label look like:
 **AWS g2.2xlarge  instance type won’t work for Udacity AMI**
 
 It took me LONG time try setting up AWS for the project. I tried all following works back and forth:
-- [Illegal instruction (core dumped)](https://discussions.udacity.com/t/illegal-instruction-when-importing-tensorflow/343894).
+- Error: [Illegal instruction (core dumped)](https://discussions.udacity.com/t/illegal-instruction-when-importing-tensorflow/343894).
+- Error: ```Error: ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory```.
 - pip uninstall tensorflow
 - pip install tensorflow-gpu
 - pip uninstall tensorflow-gpu
