@@ -33,7 +33,7 @@ Let's see what training image and label look like:
 ## Training & Testing
 
 ### AWS Setup
-In order to make training process FUN, we want to use GPU. But setting GPU instance on AWS was end up not FUN. 
+In order to make training process FUN, we want to use GPU. But setting up GPU instance on AWS ends up Not FUN for me. 
 
 **AWS g2.2xlarge  instance type won’t work for Udacity AMI**
 
