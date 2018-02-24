@@ -153,7 +153,7 @@ You are good to GO.
 
   **Result**: Loss look good as last one. We can see thta Initializer is very important.
 
-#### Without Initializer & regularizer
+#### 4. Without Initializer & regularizer
     ```
     EPOCH: 1  / 10  Loss: 2.953
     EPOCH: 2  / 10  Loss: 1.172
@@ -167,6 +167,22 @@ You are good to GO.
     EPOCH: 10  / 10  Loss: 0.602
     ```
   **Result**: Loss looks bad. We conclude that Initializer and Regularizer play important role in the FCN model training.
+
+#### 5. EPOCHES = 20, Learning_rate = 0.0009
+   ![alt text][lr0009]
+   
+  **Result**: Loss = 0.055, really good.
+
+
+#### 6. EPOCHES = 20, Learning_rate = 0.0001
+   ![alt text][lr0001]
+   
+  **Result**: Loss = 0.063, really good.
+
+#### 7. EPOCHES = 20, Learning_rate = 0.00001
+   ![alt text][lr00001]
+   
+  **Result**: Loss = 0.16, No good as the last two.
 
 ## Resources
 - [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
