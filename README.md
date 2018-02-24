@@ -13,6 +13,9 @@
 [lr0009]: ./assets/lr0009.PNG
 [lr0001]: ./assets/lr0001.PNG
 [lr00001]: ./assets/lr00001.PNG
+[round31]: ./assets/round31.PNG
+[round32]: ./assets/round32.PNG
+[round33]: ./assets/round33.PNG
 
 
 ## Project Introduction
@@ -133,7 +136,7 @@ You are good to GO.
 - Let's see the results on randomly picked 3 images:
     ![alt text][round21]
     ![alt text][round22]
-    ![alt text][round33]
+    ![alt text][round23]
 
 **Result**: Much better. Looks GOOD.
 
@@ -183,6 +186,16 @@ You are good to GO.
    ![alt text][lr00001]
    
   **Result**: Loss = 0.16, No good as the last two.
+  
+#### FINAL MODEL
+- Hyper-parameters
+    ```
+    ```
+- Results
+    ![alt text][round31]
+    ![alt text][round32]
+    ![alt text][round33]
+
 
 ## Resources
 - [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
