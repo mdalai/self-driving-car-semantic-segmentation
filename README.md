@@ -29,6 +29,7 @@ Let's see what training image and label look like:
   - Total training lables:  289.
 
 ## Fully Convolutional Network (FCN)
+![alt text][https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_folder_7/Deconvnet.png]
 
 ## Training & Testing
 
