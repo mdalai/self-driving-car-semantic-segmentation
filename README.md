@@ -7,6 +7,9 @@
 [round11]: ./assets/round11.PNG
 [round12]: ./assets/round12.PNG
 [round13]: ./assets/round13.PNG
+[round21]: ./assets/round21.PNG
+[round22]: ./assets/round22.PNG
+[round23]: ./assets/round23.PNG
 [lr0009]: ./assets/lr0009.PNG
 [lr0001]: ./assets/lr0001.PNG
 [lr00001]: ./assets/lr00001.PNG
@@ -105,14 +108,13 @@ You are good to GO.
     EPOCH: 9  / 10  Loss: 0.554                                                                    
     EPOCH: 10  / 10  Loss: 0.512
     ```
-- Loss did decearse
-- Let's see the results on randomly picked 3 images
+- Loss did decearse.
+- Let's see the results on randomly picked 3 images:
     ![alt text][round11]
     ![alt text][round12]
     ![alt text][round13]
 
-**Result**: Good resart. But this is not what we want.
-    
+**Result**: Good resart. But this is not what we want.    
     
 #### 2. With Initializer & Regularizer
     ```
@@ -127,6 +129,13 @@ You are good to GO.
     EPOCH: 9  / 10  Loss: 0.156
     EPOCH: 10  / 10  Loss: 0.105
     ```
+- Loss looks much better.
+- Let's see the results on randomly picked 3 images:
+    ![alt text][round21]
+    ![alt text][round22]
+    ![alt text][round33]
+
+**Result**: Much better. Looks GOOD.
 
 #### 3. With only Initializer
     ```
@@ -142,6 +151,8 @@ You are good to GO.
     EPOCH: 10  / 10  Loss: 0.115
     ```
 
+  **Result**: Loss look good as last one. We can see thta Initializer is very important.
+
 #### Without Initializer & regularizer
     ```
     EPOCH: 1  / 10  Loss: 2.953
@@ -155,7 +166,7 @@ You are good to GO.
     EPOCH: 9  / 10  Loss: 0.602
     EPOCH: 10  / 10  Loss: 0.602
     ```
-
+  **Result**: Loss looks bad. We conclude that Initializer and Regularizer play important role in the FCN model training.
 
 ## Resources
 - [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
