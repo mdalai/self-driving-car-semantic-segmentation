@@ -11,7 +11,7 @@ import csv
 EPOCHS = 20 #10
 BATCH_SIZE = 32
 KEEP_PROB = 0.5
-LEARNING_RATE = 0.0001 #0.0009
+LEARNING_RATE = 0.0009 #0.00001 #0.0001 #0.0009
 REG_SCALE = 1e-3   # L2 regularizer scale
 INI_STDDEV = 1e-3  # Initializer stddev
 
@@ -23,7 +23,7 @@ RUNS_DIR = './runs'
 #MODEL_SAVE_FILE = './model/FCN_train_model.ckpt'
 
 # save loss in csv file
-LOSS_FILE = '.loss/loss.csv'
+#LOSS_FILE = 'loss.csv'
 
 
 # Check TensorFlow Version
@@ -153,15 +153,12 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
         print("EPOCH: {}".format(epoch + 1), " / {}".format(epochs), " Loss: {:.3f}".format(loss) )
 
         losses.append('{:3f}'.format(loss))
-
     
+    print()
+    print(losses) 
     # save the model
     #saver.save(sess, MODEL_SAVE_FILE)
-
-    # Save LOSS values to csv file
-    with open(LOSS_FILE, 'wb') as f:
-        wr = csv.writer(f, quoting=csv.QUOTE_ALL)
-        wr.writerow(losses)
+ 
     
 tests.test_train_nn(train_nn)
 
