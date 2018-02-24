@@ -35,7 +35,8 @@ Let's see what training image and label look like:
 ### AWS Setup
 **AWS g2.2xlarge  instance type won’t work for Udacity AMI**
 
-It took me one and half day to try setting up AWS for the project. I tried all following works back and forth:
+It took me LONG time try setting up AWS for the project. I tried all following works back and forth:
+- [Illegal instruction (core dumped)](https://discussions.udacity.com/t/illegal-instruction-when-importing-tensorflow/343894).
 - pip uninstall tensorflow
 - pip install tensorflow-gpu
 - pip uninstall tensorflow-gpu
