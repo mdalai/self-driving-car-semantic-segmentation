@@ -12,3 +12,13 @@ We will use [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.
 
 ## Training & Testing
 
+### AWS Setup
+
+### Model coding
+
+### Training
+
+## Resources
+- [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
+- 
+
