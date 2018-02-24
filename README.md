@@ -22,11 +22,11 @@ Let's see what training image and label look like:
 - Road: labeled as PINK.
 - Not Road: labeled as RED.
 - Image shape:
-    - Train image shape:  (375, 1242, 3)
-    - Label image shape:  (375, 1242, 3)
+    - Train image shape:  (375, 1242, 3).
+    - Label image shape:  (375, 1242, 3).
 - Training Data size: 
-  - Total training images:  289
-  - Total training lables:  289
+  - Total training images:  289.
+  - Total training lables:  289.
 
 ## Fully Convolutional Network (FCN)
 
