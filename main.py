@@ -21,6 +21,8 @@ DATA_DIR = './data'
 RUNS_DIR = './runs'
 MODEL_SAVE_FILE = './model/FCN_train_model.ckpt'
 
+LOGDIR = '/tmp/'
+
 
 # Check TensorFlow Version
 assert LooseVersion(tf.__version__) >= LooseVersion('1.0'), 'Please use TensorFlow version 1.0 or newer.  You are using {}'.format(tf.__version__)
@@ -120,7 +122,7 @@ def optimize(nn_last_layer, correct_label, learning_rate, num_classes):
 
     with tf.name_scope('cross_entropy'):
         cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits= logits, labels= labels), name = 'loss')
-    tf.summary.scalar('cross_entropy', cross_entropy_loss)
+        tf.summary.scalar('cross_entropy', cross_entropy_loss)
 
     with tf.name_scope('train'):
         train_op = tf.train.AdamOptimizer(learning_rate= learning_rate).minimize(cross_entropy_loss)
@@ -133,7 +135,7 @@ tests.test_optimize(optimize)
 
 
 def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_loss, input_image,
-             correct_label, keep_prob, learning_rate):
+             correct_label, keep_prob, learning_rate, saver,writer,merged):
     """
     Train neural network and print out the loss during training.
     :param sess: TF Session
@@ -150,8 +152,10 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     # TODO: Implement function
     for epoch in range(epochs):
         for image, label in get_batches_fn(batch_size):
-            _, loss = sess.run([train_op, cross_entropy_loss], 
+            _, loss, summary = sess.run([train_op, cross_entropy_loss, merged], 
                 feed_dict = { input_image: image, correct_label: label, keep_prob: KEEP_PROB, learning_rate: LEARNING_RATE })
+            
+        writer.add_summary(summary, epoch);
             
         print("EPOCH: {}".format(epoch + 1), " / {}".format(epochs), " Loss: {:.3f}".format(loss) )
 
@@ -195,18 +199,22 @@ def run():
         image_input, keep_prob, layer3_out, layer4_out, layer7_out = load_vgg(sess, vgg_path)
         nn_last_layer = layers(layer3_out, layer4_out, layer7_out, num_classes)
         logits, train_op, cross_entropy_loss = optimize(nn_last_layer, labels, learning_rate, num_classes)
+
+
+        #merge them all so one write to disk, more comp efficient
+        merged = tf.summary.merge_all()
         
         sess.run(tf.global_variables_initializer())
 
         saver = tf.train.Saver()
 
-        # Merge all the summaries and write them out to /tmp/mnist_logs (by default)
-        #merged = tf.summary.merge_all()
-        #train_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/train', sess.graph)
-        #test_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/test')
+        #filewriter is how we write the summary protocol buffers to disk
+        writer = tf.summary.FileWriter(LOGDIR)
+        writer.add_graph(sess.graph)
+
 
         # TODO: Train NN using the train_nn function
-        train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_loss, image_input, labels, keep_prob, learning_rate)
+        train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_loss, image_input, labels, keep_prob, learning_rate, saver,writer,merged)
 
         # TODO: Save inference data using helper.save_inference_samples
         helper.save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_prob, image_input)
