@@ -50,12 +50,11 @@ It took me one and half day to try setting up AWS for the project. I tried all f
     pip uninstall tensorflow-gpu
     pip install tensorflow-gpu==1.4
     ```
-  but throws error in the end.
+  but throws an error in the end.
     ```
     ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[5,4096,5,18]
     ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[32,64,160,576]
     ```
-
 
 **Solution**: use AWS P2 instance type. 
 - choose Udacity-carnd-advanced-deep-learning AMI
