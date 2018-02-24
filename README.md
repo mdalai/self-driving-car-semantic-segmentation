@@ -1,4 +1,10 @@
 # self-driving-car-semantic-segmentation
+
+[//]: # (Image References)
+[train_label1]: ./assests/train_label1.PNG
+[train_label2]: ./assests/train_label2.PNG
+
+
 ## Project Introduction
 **Project Goal**: classify each pixel in road images into Road or Not Road.
 
@@ -9,6 +15,9 @@ We will use [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.
 - Download the dataset in [HERE](http://www.cvlibs.net/download.php?file=data_road.zip).
 
 Let's see what training image and label look like:
+
+![alt text][train_label1]
+![alt text][train_label2]
 
 - Road: labeled as PINK.
 - Not Road: labeled as RED.
