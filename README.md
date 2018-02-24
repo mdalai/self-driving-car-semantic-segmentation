@@ -20,5 +20,7 @@ We will use [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.
 
 ## Resources
 - [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
-- 
+- [FCN-8 Paper by Berkeley](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf).
+
+  
 
