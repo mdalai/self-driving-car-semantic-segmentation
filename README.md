@@ -4,6 +4,9 @@
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
 [FCN_arch]: ./assets/FNC_architecture.PNG
+[lr0009]: ./assets/lr0009.PNG
+[lr0001]: ./assets/lr0001.PNG
+[lr00001]: ./assets/lr00001.PNG
 
 
 ## Project Introduction
@@ -86,6 +89,54 @@ You are good to GO.
 ### Model coding
 
 ### Training
+#### 1. With Only Regularizer
+    ```
+    EPOCH: 1  / 10  Loss: 1.870                                                                   
+    EPOCH: 2  / 10  Loss: 0.726                                                                     
+    EPOCH: 3  / 10  Loss: 0.653                                                                     
+    EPOCH: 4  / 10  Loss: 0.623                                                                     
+    EPOCH: 5  / 10  Loss: 0.577                                                                    
+    EPOCH: 6  / 10  Loss: 0.595                                                                    
+    EPOCH: 7  / 10  Loss: 0.572                                                                    
+    EPOCH: 8  / 10  Loss: 0.510                                                                    
+    EPOCH: 9  / 10  Loss: 0.554                                                                    
+    EPOCH: 10  / 10  Loss: 0.512
+    ```
+    
+    
+#### 2. With Initializer & Regularizer
+    ```
+    EPOCH: 1  / 10  Loss: 0.517                                                                                                             EPOCH: 2  / 10  Loss: 0.372                                                                                                             EPOCH: 3  / 10  Loss: 0.253                                                                                                             EPOCH: 4  / 10  Loss: 0.324                                                                                                             EPOCH: 5  / 10  Loss: 0.204                                                                                                             EPOCH: 6  / 10  Loss: 0.185                                                                                                             EPOCH: 7  / 10  Loss: 0.189                                                                                                             EPOCH: 8  / 10  Loss: 0.190                                                                                                             EPOCH: 9  / 10  Loss: 0.156                                                                                                             EPOCH: 10  / 10  Loss: 0.105
+    ```
+
+#### 3. With only Initializer
+    ```
+    EPOCH: 1  / 10  Loss: 0.260
+    EPOCH: 2  / 10  Loss: 0.346
+    EPOCH: 3  / 10  Loss: 0.419
+    EPOCH: 4  / 10  Loss: 0.273
+    EPOCH: 5  / 10  Loss: 0.239
+    EPOCH: 6  / 10  Loss: 0.117
+    EPOCH: 7  / 10  Loss: 0.212
+    EPOCH: 8  / 10  Loss: 0.374
+    EPOCH: 9  / 10  Loss: 0.145
+    EPOCH: 10  / 10  Loss: 0.115
+    ```
+
+#### Without Initializer & regularizer
+    ```
+    EPOCH: 1  / 10  Loss: 2.953
+    EPOCH: 2  / 10  Loss: 1.172
+    EPOCH: 3  / 10  Loss: 0.690
+    EPOCH: 4  / 10  Loss: 0.658
+    EPOCH: 5  / 10  Loss: 0.628
+    EPOCH: 6  / 10  Loss: 0.636
+    EPOCH: 7  / 10  Loss: 0.597
+    EPOCH: 8  / 10  Loss: 0.599
+    EPOCH: 9  / 10  Loss: 0.602
+    EPOCH: 10  / 10  Loss: 0.602
+    ```
+
 
 ## Resources
 - [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
