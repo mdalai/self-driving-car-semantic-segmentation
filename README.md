@@ -1,8 +1,8 @@
 # self-driving-car-semantic-segmentation
 
 [//]: # (Image References)
-[train_label1]: ./assests/train_label1.PNG
-[train_label2]: ./assests/train_label2.PNG
+[train_label1]: ./assets/train_label1.PNG
+[train_label2]: ./assets/train_label2.PNG
 
 
 ## Project Introduction
