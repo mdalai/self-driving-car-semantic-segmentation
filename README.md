@@ -4,6 +4,9 @@
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
 [FCN_arch]: ./assets/FNC_architecture.PNG
+[round11]: ./assets/round11.PNG
+[round12]: ./assets/round12.PNG
+[round13]: ./assets/round13.PNG
 [lr0009]: ./assets/lr0009.PNG
 [lr0001]: ./assets/lr0001.PNG
 [lr00001]: ./assets/lr00001.PNG
@@ -102,6 +105,13 @@ You are good to GO.
     EPOCH: 9  / 10  Loss: 0.554                                                                    
     EPOCH: 10  / 10  Loss: 0.512
     ```
+- Loss did decearse
+- Let's see the results on randomly picked 3 images
+    ![alt text][round11]
+    ![alt text][round12]
+    ![alt text][round13]
+
+**Result**: Good resart. But this is not what we want.
     
     
 #### 2. With Initializer & Regularizer
