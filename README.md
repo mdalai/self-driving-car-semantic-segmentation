@@ -45,13 +45,15 @@ It took me one and half day to try setting up AWS for the project. I tried all f
     wget http://us.download.nvidia.com/XFree86/Linux-x86_64/375.66/NVIDIA-Linux-x86_64-375.66.run
     sudo bash ./NVIDIA-Linux-x86_64-375.66.run  --dkms
     ```
-- followings seems worked, but throws error in the end.
+- followings seems worked.
     ```
-     pip uninstall tensorflow-gpu
-     pip install tensorflow-gpu==1.4
-
-     ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[5,4096,5,18]
-     ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[32,64,160,576]
+    pip uninstall tensorflow-gpu
+    pip install tensorflow-gpu==1.4
+    ```
+  but throws error in the end.
+    ```
+    ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[5,4096,5,18]
+    ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[32,64,160,576]
     ```
 
 
