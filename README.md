@@ -33,6 +33,8 @@ Let's see what training image and label look like:
 ## Training & Testing
 
 ### AWS Setup
+In order to make training process FUN, we want to use GPU. 
+
 **AWS g2.2xlarge  instance type won’t work for Udacity AMI**
 
 It took me LONG time try setting up AWS for the project. I tried all following works back and forth:
