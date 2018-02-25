@@ -3,7 +3,7 @@
 [//]: # (Image References)
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
-[FCN_arch]: ./assets/FNC_architecture.PNG =124x548
+[FCN_arch]: ./assets/FNC_architecture.PNG
 [round11]: ./assets/round11.PNG
 [round12]: ./assets/round12.PNG
 [round13]: ./assets/round13.PNG
