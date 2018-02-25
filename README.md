@@ -106,6 +106,10 @@ You are good to GO.
         - layer4_out
         - layer7_out
 2. Build FNC Layers
+    - Apply 1x1 Conv to layer7 output --> Upsample
+    - Apply 1x1 Conv to layer4 output --> Skip Connection --> Upsample
+    - Apply 1x1 Conv to layer3 output --> Skip Connection --> Upsample
+    - Apply L2 Regularizer & Initializer to each of above steps
 3. Define Cost & Optimization
 4. Define training process
 
