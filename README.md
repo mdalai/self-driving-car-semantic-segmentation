@@ -44,7 +44,7 @@ Let's see what training image and label look like:
 ## Fully Convolutional Network (FCN)
 Typical CNN can classify Hot Dog and NOT Hot Dog from image very well, but it can not answer the question of where is the hot dog in the image. Because it does not preserve spatial information from the image. FCN solves this problem.
 
-![alt text][FCN_arch]
+![alt text][FCN_arch=124x548]
 
 Fully Convolutional Networks (FCN) consists of two parts: Encoder and Decoder.
 
