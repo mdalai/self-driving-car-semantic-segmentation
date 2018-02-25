@@ -3,7 +3,7 @@
 [//]: # (Image References)
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
-[FCN_arch]: ./assets/FNC_architecture.PNG
+[FCN_arch]: ./assets/FNC_architecture.PNG =124x548
 [round11]: ./assets/round11.PNG
 [round12]: ./assets/round12.PNG
 [round13]: ./assets/round13.PNG
@@ -44,7 +44,7 @@ Let's see what training image and label look like:
 ## Fully Convolutional Network (FCN)
 Typical CNN can classify Hot Dog and NOT Hot Dog from image very well, but it can not answer the question of where is the hot dog in the image. Because it does not preserve spatial information from the image. FCN solves this problem.
 
-![alt text][FCN_arch=124x548]
+![alt text][FCN_arch]
 
 Fully Convolutional Networks (FCN) consists of two parts: Encoder and Decoder.
 
