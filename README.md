@@ -56,7 +56,7 @@ Fully Convolutional Networks (FCN) consists of two parts: Encoder and Decoder.
 - Upsample the layers. Transpose convolution help upsampling the previous layer to a higher resolution or dimension. Transpose convolution is also called deconvolution. It is opposite of convolution process.
 - Skip layers. Problem of convolution in encoder is that it looks close on some feature and lose bigger picture as a result. The skip layer is here to retain losed information. Simply, it skipes some of the layers in the encoder and decoder layers. 
 
-### Model coding
+### FCN model implementation
 1. Load VGG. 
     - use ```tf.saved_model.loader.load(sess, [vgg_tag], vgg_path)``` to load model.
     - get the default graph first ```tf.get_default_graph()```.
