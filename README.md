@@ -96,6 +96,19 @@ You are good to GO.
 
 
 ### Model coding
+1. Load VGG. 
+    - use ```tf.saved_model.loader.load(sess, [vgg_tag], vgg_path)``` to load model.
+    - get the default graph first ```tf.get_default_graph()```.
+    - then, wee will use ```graph.get_tensor_by_name load``` to load followings from Pre-trained VGG model into the graph:
+        - input
+        - keep_prob
+        - layer3_out
+        - layer4_out
+        - layer7_out
+2. Build FNC Layers
+3. Define Cost & Optimization
+4. Define training process
+
 
 ### Training
 #### 1. With Only Regularizer
