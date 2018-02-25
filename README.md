@@ -56,6 +56,27 @@ Fully Convolutional Networks (FCN) consists of two parts: Encoder and Decoder.
 - Upsample the layers. Transpose convolution help upsampling the previous layer to a higher resolution or dimension. Transpose convolution is also called deconvolution. It is opposite of convolution process.
 - Skip layers. Problem of convolution in encoder is that it looks close on some feature and lose bigger picture as a result. The skip layer is here to retain losed information. Simply, it skipes some of the layers in the encoder and decoder layers. 
 
+### Model coding
+1. Load VGG. 
+    - use ```tf.saved_model.loader.load(sess, [vgg_tag], vgg_path)``` to load model.
+    - get the default graph first ```tf.get_default_graph()```.
+    - then, wee will use ```graph.get_tensor_by_name load``` to load followings from Pre-trained VGG model into the graph:
+        - input
+        - keep_prob
+        - layer3_out
+        - layer4_out
+        - layer7_out
+2. Build FNC Layers
+    - Apply 1x1 Conv to layer7 output --> Upsample
+    - Apply 1x1 Conv to layer4 output --> Skip Connection --> Upsample
+    - Apply 1x1 Conv to layer3 output --> Skip Connection --> Upsample
+    - Apply L2 Regularizer & Initializer to each of above steps
+3. Define Cost & Optimization
+    - use Cross Entropy Loss
+    - adapt Adam optimizer
+4. Define training process
+
+
 
 ## Training & Testing
 
@@ -93,26 +114,6 @@ It took me LONG time try setting up AWS for the project. I tried all following w
 - pip install tqdm
 
 You are good to GO.
-
-
-### Model coding
-1. Load VGG. 
-    - use ```tf.saved_model.loader.load(sess, [vgg_tag], vgg_path)``` to load model.
-    - get the default graph first ```tf.get_default_graph()```.
-    - then, wee will use ```graph.get_tensor_by_name load``` to load followings from Pre-trained VGG model into the graph:
-        - input
-        - keep_prob
-        - layer3_out
-        - layer4_out
-        - layer7_out
-2. Build FNC Layers
-    - Apply 1x1 Conv to layer7 output --> Upsample
-    - Apply 1x1 Conv to layer4 output --> Skip Connection --> Upsample
-    - Apply 1x1 Conv to layer3 output --> Skip Connection --> Upsample
-    - Apply L2 Regularizer & Initializer to each of above steps
-3. Define Cost & Optimization
-4. Define training process
-
 
 ### Training
 #### 1. With Only Regularizer
