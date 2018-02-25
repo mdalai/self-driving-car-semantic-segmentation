@@ -4,6 +4,7 @@
 [train_label1]: ./assets/train_label1.PNG
 [train_label2]: ./assets/train_label2.PNG
 [FCN_arch]: ./assets/FNC_architecture.PNG
+[FCN-8]: ./assets/FCN-8.png
 [round11]: ./assets/round11.PNG
 [round12]: ./assets/round12.PNG
 [round13]: ./assets/round13.PNG
@@ -44,7 +45,7 @@ Let's see what training image and label look like:
 ## Fully Convolutional Network (FCN)
 Typical CNN can classify Hot Dog and NOT Hot Dog from image very well, but it can not answer the question of where is the hot dog in the image. Because it does not preserve spatial information from the image. FCN solves this problem.
 
-![alt text][FCN_arch]
+![alt text][FCN-8]
 
 Fully Convolutional Networks (FCN) consists of two parts: Encoder and Decoder.
 
@@ -220,11 +221,24 @@ You are good to GO.
     ![alt text][round32]
     ![alt text][round33]
 
+## What I Have Learned
+1. About **Regularizer**:
+    - Only adding ```kernel_regularizer = tf.contrib.layers.l2_regularizer(REG_SCALE)``` in layers would NOT work. Need to add Regularization Losses in the Loss defination:
+        ```
+        reg_losses = tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES)
+        cross_entropy_loss = cross_entropy_loss + sum(reg_losses)
+        ```
+    - Loss start with very high values, in my case, ```Loss:20  Loss:40```.
+    - It is NOT as efficient as Initializer. You need to morning training EPOCHS.
+2. About **Initializer**:
+    - it is very effficient. You can get a realy good result just with a few training EPOCHS.
 
 ## Resources
 - [Udacity CarND Semantic Segmentation](https://github.com/udacity/CarND-Semantic-Segmentation).
 - [FCN-8 Paper by Berkeley](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf).
-- Helpful animations of convolutional operations, including transposed convolutions, can be found [here](https://github.com/vdumoulin/conv_arithmetic).
+- Helpful animations of convolutional operations, including transposed convolutions, can be found [HERE](https://github.com/vdumoulin/conv_arithmetic).
+- To study more about Semantic Segmentation, please check this interesting resource - [A 2017 Guide to Semantic Segmentation with Deep Learning](http://blog.qure.ai/notes/semantic-segmentation-deep-learning-review).
+- [Weight Initialization](http://cs231n.github.io/neural-networks-2/#init) and [Regularization](http://cs231n.github.io/neural-networks-2/#reg). 
 
   
 
