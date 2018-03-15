@@ -239,6 +239,7 @@ You are good to GO.
 - Helpful animations of convolutional operations, including transposed convolutions, can be found [HERE](https://github.com/vdumoulin/conv_arithmetic).
 - To study more about Semantic Segmentation, please check this interesting resource - [A 2017 Guide to Semantic Segmentation with Deep Learning](http://blog.qure.ai/notes/semantic-segmentation-deep-learning-review).
 - [Weight Initialization](http://cs231n.github.io/neural-networks-2/#init) and [Regularization](http://cs231n.github.io/neural-networks-2/#reg). 
+- [Semantic Image Segmentation with DeepLab in Tensorflow](https://research.googleblog.com/2018/03/semantic-image-segmentation-with.html) from Google Research Blog.
 
   
 
