@@ -119,9 +119,9 @@ def optimize(nn_last_layer, correct_label, learning_rate, num_classes):
     """
     # TODO: Implement function
     ### Reshape 4D tensor to 2D tensor
-    logits = tf.reshape(nn_last_layer, (-1, num_classes))
+    logits = tf.reshape(nn_last_layer, (-1, num_classes), name="logits_2d")
     ### Reshape 4D tensor to 2D tensor
-    labels = tf.reshape(correct_label, (-1, num_classes))
+    labels = tf.reshape(correct_label, (-1, num_classes),name="labels_2d")
     ### use Cross Entropy Loss
     cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits= logits, labels= labels), name = 'loss')
     ### adapt Adam optimizer
@@ -205,13 +205,17 @@ def run():
         # initialize variables      
         sess.run(tf.global_variables_initializer())
 
-        #saver = tf.train.Saver()
+        # TF saver object
+        saver = tf.train.Saver()
 
         # TODO: Train NN using the train_nn function
         train_nn(sess, EPOCHS, BATCH_SIZE, get_batches_fn, train_op, cross_entropy_loss, image_input, labels, keep_prob, learning_rate)
 
+        # TF save the graph and checkpoint
+        saver.save(sess,'data/models/model1',global_step=1000)
+
         # TODO: Save inference data using helper.save_inference_samples
-        helper.save_inference_samples(RUNS_DIR, DATA_DIR, sess, IMAGE_SHAPE, logits, keep_prob, image_input)
+        #helper.save_inference_samples(RUNS_DIR, DATA_DIR, sess, IMAGE_SHAPE, logits, keep_prob, image_input)
 
         # OPTIONAL: Apply the trained model to a video
 
